@@ -495,6 +495,8 @@ jobs:
           if [ -f $GITHUB_WORKSPACE/device_kernel/net/netfilter/xt_qtaguid.c ]; then
               patch -p0 < $GITHUB_WORKSPACE/device_kernel/lxc/xt_qtaguid.patch
           fi
+          
+          echo "CONFIG_BTRFS_FS=n" >> ./arch/$ARCH/configs/${{ env.DEFCONFIG_NAME }}
 
           echo "LXC_ENABLE=lxc" >> $GITHUB_ENV
 
