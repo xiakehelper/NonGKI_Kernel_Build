@@ -502,6 +502,9 @@ jobs:
           
           echo "CONFIG_BTRFS_FS=n" >> ./arch/$ARCH/configs/${{ env.DEFCONFIG_NAME }}
 
+          ###
+          echo "# CONFIG_IPC_LOGGING is not set" >> ./arch/$ARCH/configs/${{ env.DEFCONFIG_NAME }}
+          
           echo "LXC_ENABLE=lxc" >> $GITHUB_ENV
 
       - name: Patch Kernel of SUSFS
